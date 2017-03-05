@@ -1,0 +1,47 @@
+.dialog {
+    display: none;
+    position: absolute;
+    width: 200px;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.dialog-hd, .dialog-ft {
+    position: relative;
+    padding: 10px;
+}
+
+.dialog-bd {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    min-height: 20px;
+    padding: 10px 0;
+    margin: 0 10px;
+}
+
+.dialog-hd .close-btn {
+    width: 40px;
+    float: right;
+    cursor: pointer;
+}
+
+.dialog-ft .btn {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 50px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.show {
+    display: block;
+}
+

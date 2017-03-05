@@ -66,7 +66,7 @@ function sayName() {
     2. Object.getOwnPropertyNames():所有的实例属性，无论是否可枚举
 */
 function hasPrototypeProperty(object, name) { //只有在属性存在于原型中返回true
-    return !Object.hasOwnProperty(name) && (name in object);
+    return !object.hasOwnProperty(name) && (name in object);
 }
 
 function Person() {}
@@ -110,7 +110,7 @@ function Person(name, age) {
     this.age = age;
     this.friend = ["she","her"];
 }
-Person.prototype = function() {
+Person.prototype = {
     construtor: Person,
     sayName: function() {
         console.log(this.name);

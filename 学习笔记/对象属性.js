@@ -2,11 +2,11 @@
     对象属性：
     1. 数据属性    
     特性：[[Configurable]],[[Enumerable]],[[Writable]],[[Value]]
-    通过Object.defineProperty()修改属性的默认特性
+    通过Object.defineProperty()修改属性的默认特性，不指定的话特性的默认值都为false
 
     2. 访问器属性
     特性：[[Configurable]],[[Enumerable]],[[Get]],[[Set]]
-    通过Object.defineProperty()来定义，设置一个访问器属性的值会导致其他属性发生变化
+    通过Object.defineProperty()来定义，常见用法：设置一个访问器属性的值会导致其他属性发生变化
     举例：
  */
 

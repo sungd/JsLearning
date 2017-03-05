@@ -112,7 +112,7 @@ var script = document.createElement("script");
 script.src = "http://xxxx?callback=handleResponse";
 document.body.appendChild(script);
 优点：直接访问响应文本，直接在浏览器和服务器之间双向通信
-不足：从其他域加载代码执行，不安全；不容器确定JSONP请求是否失败
+不足：从其他域加载代码执行，不安全；不容易确定JSONP请求是否失败
 
 
 Comet:服务器向页面推送数据的技术－－长轮询和流

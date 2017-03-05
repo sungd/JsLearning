@@ -14,7 +14,7 @@
  */
 function createFunction() {
     var result = [];
-    for(var i = 0; i < 10; i++) {
+    for (var i = 0; i < 10; i++) {
         result[i] = function(num) {
             return function() {
                 return num;
@@ -63,27 +63,34 @@ function Person(name) {
 // name成为静态的、由所有实例共享的属性
 (function() {
     var name = "";
-    Person = function(value) {name = value};;
-    Person.prototype.getName = function(){return name;};
-    Person.prototype.setName = function(value){name = value;};
+    Person = function(value) { name = value };
+    Person.prototype.getName = function() {
+        return name;
+    };
+    Person.prototype.setName = function(value) { name = value; };
 })();
 
 /*
     模块模式：创建一个对象并以某些数据对其进行初始化，还要公开一些能够访问这些私有数据的方法，可以使用模块模式
  */
-var Application = function() {
-    // 私有
-    var components = [];
-    components.push(10);
+//揭示模块模式
+var Module = (function() {
 
-    // 公共
-    return {
-        getComponent: function() {
-            return components.length;
-        },
-        registerComponent: function(component) {
-            if(typeof component == "object")
-                component.push(component);
-        }
+    var privateMethod = function() {
+        // private
     };
-}();
+
+    var someMethod = function() {
+        // public
+    };
+
+    var anotherMethod = function() {
+        // public
+    };
+
+    return {
+        someMethod: someMethod,
+        anotherMethod: anotherMethod
+    };
+
+})();

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="dialog.css">
+</head>
+<body>
+    
+    <!-- <div class="dialog">
+        <div class="dialog-hd">
+            <span class="title">演示对话框</span>
+            <span class="close-btn">关闭</span>
+        </div>
+        <div class="dialog-bd">
+            对话框内容
+        </div>
+        <div class="dialog-ft">
+            <button class="btn ok">确认</button>
+            <button class="btn cancel">取消</button>
+        </div>
+    </div> -->
+
+    <script src='dialog.js'></script>
+
+    <script>
+        var dialog = new Dialog({
+            title: '对话框',
+            content: '第一个组件'
+        });
+
+        dialog.show();
+    </script>
+</body>
+</html>

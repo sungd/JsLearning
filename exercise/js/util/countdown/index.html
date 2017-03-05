@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <style>
+        .countdown {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border: 1px solid #000;
+            border-radius: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>倒计时组件</h1>
+    <h3>调用方法：</h3>
+    var countdown = new Countdown(60); <br />
+    countdown.bindEvent(); // 用于绑定暂停/继续事件，可不用 <br />
+    countdown.start(); // 开始倒计时 <br />
+    <br />
+
+</body>
+    <script>
+        function Countdown(time) {
+            this.initTime = time;
+            this.curTime = time;
+            this.timer;
+            this.status = true; // status: true: active; false: stop
+
+            this.countdown = document.createElement('div');
+            this.countdown.classList.add('countdown');
+            document.body.appendChild(this.countdown);
+            this.countdown.innerHTML = this.initTime;
+        }
+
+        Countdown.prototype.bindEvent = function() {
+            var self = this;
+            this.countdown.addEventListener('click', function() {
+                if (self.status) {
+                    clearTimeout(self.timer);
+                    self.status = false;
+                } else {
+                    self.status = true;
+                    self.start();
+                }
+
+            });
+        };
+
+        Countdown.prototype.start = function() {
+            var self = this;
+            setTime();
+
+            function setTime() {
+                if (self.curTime > 0) {
+                    self.curTime--;
+                    self.countdown.innerHTML = self.curTime;
+                    self.timer = setTimeout(setTime, 1000);
+                } else {
+                    clearTimeout(self.timer);
+                }
+            }
+        };
+
+        Countdown.prototype.reset = function() {
+            this.curTime = this.initTime;
+            clearTimeout(this.timer);
+        };
+
+        var countdown = new Countdown(60);
+        countdown.bindEvent();
+        countdown.start();
+    </script>
+</html>
